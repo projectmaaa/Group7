@@ -10,13 +10,14 @@ import java.sql.Statement;
 import mysql.MysqlConnection;
 
 public class Users {
+
 	private static ArrayList<User> userList;
 
 	public Users() {
-		init();
+		updateList();
 	}
 
-	private void init() {
+	public static void updateList() {
 		Connection conn = null;
 		Statement stmt;
 		ResultSet rs;

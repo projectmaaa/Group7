@@ -7,22 +7,22 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="669.0" prefWidth="372.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="669.0" prefWidth="372.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MaintainController">
    <children>
       <ImageView fitHeight="669.0" fitWidth="1014.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../bigstock-Stack-Of-Books-70033240.jpg" />
          </image>
       </ImageView>
-      <Button layoutX="940.0" layoutY="2.0" mnemonicParsing="false" text="Logout" />
+      <Button fx:id="logoutButton" layoutX="940.0" layoutY="2.0" mnemonicParsing="false" onAction="#logOutButtonHandler" text="Logout" />
       <Text layoutX="12.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome" wrappingWidth="134.0">
          <font>
             <Font size="29.0" />
          </font></Text>
-      <Button layoutX="33.0" layoutY="100.0" mnemonicParsing="false" text="Maintain Questions" />
-      <Button layoutX="182.0" layoutY="100.0" mnemonicParsing="false" text="Maintain Exam" />
-      <Button layoutX="300.0" layoutY="100.0" mnemonicParsing="false" text="Confirm Grades" />
-      <Button layoutX="424.0" layoutY="100.0" mnemonicParsing="false" text="Order Reports" />
+      <Button layoutX="33.0" layoutY="87.0" mnemonicParsing="false" text="Maintain Questions" />
+      <Button layoutX="182.0" layoutY="87.0" mnemonicParsing="false" text="Maintain Exam" />
+      <Button layoutX="300.0" layoutY="87.0" mnemonicParsing="false" text="Confirm Grades" />
+      <Button layoutX="424.0" layoutY="87.0" mnemonicParsing="false" text="Order Reports" />
       <Text fx:id="TextGroup7" layoutX="365.0" layoutY="664.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Copyright © 2018 Group7" />
       <ImageView fx:id="Group7Logo" blendMode="MULTIPLY" fitHeight="150.0" fitWidth="200.0" layoutX="348.0" layoutY="572.0" pickOnBounds="true" preserveRatio="true">
          <image>
