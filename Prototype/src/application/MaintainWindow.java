@@ -2,15 +2,24 @@ package application;
 
 import java.io.File;
 import java.net.URL;
+
+import javafx.event.EventHandler;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
+import userManagement.User;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
+import javafx.scene.text.Text;
 
 public class MaintainWindow {
 
 	private static Stage stage;
+
+	@FXML
+	Text date;
 
 	@SuppressWarnings("deprecation")
 	public void go() throws Exception {
@@ -23,6 +32,12 @@ public class MaintainWindow {
 			Image image = new Image(new File("src/AES2.PNG").toURI().toString());
 			stage.getIcons().add(image);
 			stage.setResizable(false);
+			stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
+				@Override
+				public void handle(WindowEvent event) {
+					User.updateUserLogged(User.getActiveUser().getiD(), 0);
+				}
+			});
 			stage.sizeToScene();
 			stage.setScene(scene);
 			stage.setTitle("AES");

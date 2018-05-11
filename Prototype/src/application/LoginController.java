@@ -1,9 +1,6 @@
 package application;
 
 import java.net.URL;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.ResourceBundle;
 
 import javafx.event.ActionEvent;
@@ -15,28 +12,29 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
+import resources.Utilities;
 import userManagement.User;
 import userManagement.Users;
 
 public class LoginController implements Initializable {
 
 	@FXML
-	PasswordField pw;
+	private PasswordField pw;
 
 	@FXML
-	TextField un;
+	private TextField un;
 
 	@FXML
-	Button login;
+	private Button login;
 
 	@FXML
-	Label loginLabel;
+	private Label loginLabel;
 
 	@FXML
-	AnchorPane signIn;
+	private AnchorPane signIn;
 
 	@FXML
-	Text date;
+	private Text date;
 
 	public void loginButtonHandler(ActionEvent event) throws Exception {
 		try {
@@ -89,8 +87,6 @@ public class LoginController implements Initializable {
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-		Date date = new Date();
-		this.date.setText(dateFormat.format(date));
+		date.setText(Utilities.setDateS());
 	}
 }
