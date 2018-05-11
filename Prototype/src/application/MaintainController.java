@@ -1,11 +1,11 @@
 package application;
 
-import database.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
+import userManagement.User;
 
 public class MaintainController {
 

@@ -7,8 +7,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
-import database.Users;
-import database.User;
+import userManagement.User;
+import userManagement.Users;
 
 public class LoginController {
 

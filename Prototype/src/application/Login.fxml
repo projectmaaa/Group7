@@ -33,5 +33,6 @@
 			</font>
 		</Text>
 		<Label fx:id="loginLabel" alignment="CENTER" layoutX="18.0" layoutY="268.0" prefHeight="21.0" prefWidth="260.0" textAlignment="JUSTIFY" visible="false" />
+      <Text layoutX="191.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="86.6708984375" />
 	</children>
 </AnchorPane>
