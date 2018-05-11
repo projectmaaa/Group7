@@ -49,10 +49,10 @@ public class LoginController implements Initializable {
 				MaintainWindow maintainWindow = new MaintainWindow();
 				maintainWindow.go();
 			} else if (user.getLogged() == 1) {
-				loginLabel.setText("The user already logged.");
+				loginLabel.setText("This user is already logged in.");	// syntax fix by AsafYus
 			}
 		} catch (NullPointerException ex) {
-			loginLabel.setText("The user name or password is incorrect.");
+			loginLabel.setText("Incorrect username or password.");	// syntax fix by AsafYus
 		} finally {
 			loginLabel.setVisible(true);
 		}
