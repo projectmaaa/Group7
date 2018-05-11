@@ -5,16 +5,12 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class MysqlConnection {
-
-	public MysqlConnection() {
-		super();
-	}
-
 	/**
 	 * This method create connection to the database
 	 * 
 	 * @return returns the connection
 	 */
+	@SuppressWarnings("deprecation")
 	public static Connection connection() {
 		try {
 			Class.forName("com.mysql.jdbc.Driver").newInstance();

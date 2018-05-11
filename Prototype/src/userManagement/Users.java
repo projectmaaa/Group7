@@ -1,9 +1,7 @@
 package userManagement;
 
 import java.util.ArrayList;
-
 import dataBaseAccessories.MysqlConnection;
-
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;

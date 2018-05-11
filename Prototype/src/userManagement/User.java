@@ -3,7 +3,6 @@ package userManagement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-
 import dataBaseAccessories.MysqlConnection;
 
 public class User {

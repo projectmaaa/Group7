@@ -2,7 +2,6 @@ package application;
 
 import java.io.File;
 import java.net.URL;
-
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
 import javafx.scene.Parent;
