@@ -1,16 +1,24 @@
 package application;
 
+import java.net.URL;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.ResourceBundle;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.text.Text;
 import userManagement.User;
 import userManagement.Users;
 
-public class LoginController {
+public class LoginController implements Initializable {
 
 	@FXML
 	PasswordField pw;
@@ -26,6 +34,9 @@ public class LoginController {
 
 	@FXML
 	AnchorPane signIn;
+
+	@FXML
+	Text date;
 
 	public void loginButtonHandler(ActionEvent event) throws Exception {
 		try {
@@ -74,5 +85,12 @@ public class LoginController {
 	private void clearFields() {
 		un.clear();
 		pw.clear();
+	}
+
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+		Date date = new Date();
+		this.date.setText(dateFormat.format(date));
 	}
 }

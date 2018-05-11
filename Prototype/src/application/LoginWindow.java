@@ -26,6 +26,7 @@ public class LoginWindow extends Application {
 			stage.setResizable(false);
 			stage.setScene(scene);
 			stage.setTitle("AES");
+			stage.sizeToScene();
 			stage.show();
 		} catch (Exception e) {
 			e.printStackTrace();

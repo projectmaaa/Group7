@@ -9,7 +9,7 @@
 
 <AnchorPane fx:id="signIn" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="506.0" prefWidth="295.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.LoginController">
 	<children>
-		<ImageView fitHeight="553.0" fitWidth="354.0" layoutX="-30.0" layoutY="-23.0" pickOnBounds="true">
+		<ImageView fitHeight="506.0" fitWidth="295.0" pickOnBounds="true">
 			<image>
 				<Image url="@../bg-login.jpg" />
 			</image>
@@ -33,6 +33,6 @@
 			</font>
 		</Text>
 		<Label fx:id="loginLabel" alignment="CENTER" layoutX="18.0" layoutY="268.0" prefHeight="21.0" prefWidth="260.0" textAlignment="JUSTIFY" visible="false" />
-      <Text layoutX="191.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="86.6708984375" />
+      <Text fx:id="date" layoutX="209.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="78.0" />
 	</children>
 </AnchorPane>
