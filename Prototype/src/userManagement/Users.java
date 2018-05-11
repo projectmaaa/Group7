@@ -48,7 +48,7 @@ public class Users {
 					return user;
 			}
 		} 
-		/* Arkady */
+		/* Alex */
 		return (null);
 	}
 
