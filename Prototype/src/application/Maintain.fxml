@@ -14,15 +14,10 @@
             <Image url="@../bigstock-Stack-Of-Books-70033240.jpg" />
          </image>
       </ImageView>
-      <Button fx:id="logoutButton" layoutX="940.0" layoutY="2.0" mnemonicParsing="false" onAction="#logOutButtonHandler" text="Logout" />
       <Text layoutX="12.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome" wrappingWidth="134.0">
          <font>
             <Font size="29.0" />
          </font></Text>
-      <Button layoutX="33.0" layoutY="87.0" mnemonicParsing="false" text="Maintain Questions" />
-      <Button layoutX="182.0" layoutY="87.0" mnemonicParsing="false" text="Maintain Exam" />
-      <Button layoutX="300.0" layoutY="87.0" mnemonicParsing="false" text="Confirm Grades" />
-      <Button layoutX="424.0" layoutY="87.0" mnemonicParsing="false" text="Order Reports" />
       <Text fx:id="TextGroup7" layoutX="365.0" layoutY="664.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Copyright © 2018 Group7" />
       <ImageView fx:id="Group7Logo" blendMode="MULTIPLY" fitHeight="150.0" fitWidth="200.0" layoutX="348.0" layoutY="572.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -34,5 +29,14 @@
             <Font size="20.0" />
          </font>
       </Text>
+      <ToolBar layoutX="437.0" layoutY="30.0" prefHeight="45.0" prefWidth="559.0" style="-fx-background-color: 0;">
+        <items>
+            <Button depthTest="DISABLE" mnemonicParsing="false" text="Maintain Questions" />
+            <Button mnemonicParsing="false" text="Order Reports" />
+            <Button mnemonicParsing="false" text="Confirm Grades" />
+            <Button disable="true" mnemonicParsing="false" text="Button" visible="false" />
+            <Button fx:id="logoutButton" mnemonicParsing="false" onAction="#logOutButtonHandler" text="Logout" />
+        </items>
+      </ToolBar>
    </children>
 </AnchorPane>

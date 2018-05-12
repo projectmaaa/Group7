@@ -32,7 +32,7 @@
 				<Font name="Harvest Regular" size="60.0" />
 			</font>
 		</Text>
-		<Label fx:id="loginLabel" alignment="CENTER" layoutX="18.0" layoutY="268.0" prefHeight="21.0" prefWidth="260.0" textAlignment="JUSTIFY" visible="false" />
+		<Label fx:id="loginLabel" alignment="CENTER" layoutX="8.0" layoutY="268.0" prefHeight="21.0" prefWidth="280.0" textAlignment="JUSTIFY" visible="false" />
       <Text fx:id="date" layoutX="209.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="78.0" />
 	</children>
 </AnchorPane>

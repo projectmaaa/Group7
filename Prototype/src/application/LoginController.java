@@ -42,17 +42,13 @@ public class LoginController implements Initializable {
 			User user = userExist();
 			if ((user != null) && (user.getLogged() == 0)) {
 				clearFields();
-				user.setActiveUser(user);
-				User.updateUserLogged(user.getiD(), 1);
-				LoginWindow.closeStage();
 				loginLabel.setVisible(false);
-				MaintainWindow maintainWindow = new MaintainWindow();
-				maintainWindow.go();
+				activeWindowType(user);
 			} else if (user.getLogged() == 1) {
-				loginLabel.setText("This user is already logged in.");	// syntax fix by AsafYus
+				loginLabel.setText("This user is already logged in."); // syntax fix by AsafYus
 			}
 		} catch (NullPointerException ex) {
-			loginLabel.setText("Incorrect username or password.");	// syntax fix by AsafYus
+			loginLabel.setText("Incorrect username or password."); // syntax fix by AsafYus
 		} finally {
 			loginLabel.setVisible(true);
 		}
@@ -78,11 +74,36 @@ public class LoginController implements Initializable {
 	}
 
 	/**
-	 * This method clears the username and password fields
+	 * This method clears the userName and password fields
 	 */
 	private void clearFields() {
 		un.clear();
 		pw.clear();
+	}
+
+	/**
+	 * This method get user and according to his type active the right window
+	 * 
+	 * @param user
+	 * @throws Exception
+	 */
+	private void activeWindowType(User user) throws Exception {
+		if (user.getType().equals("Teacher")) {
+			user.setActiveUser(user);
+			User.updateUserLogged(user.getiD(), 1);
+			LoginWindow.closeStage();
+			MaintainWindow maintainWindow = new MaintainWindow();
+			maintainWindow.go();
+		} else if (user.getType().equals("Principal")) {
+			System.out.println("Principal Window In work");
+			loginLabel.setText("Principal Window In work");
+		} else if (user.getType().equals("Student")) {
+			System.out.println("Student Window In work");
+			loginLabel.setText("Student Window In work");
+		} else {
+			System.out.println("Undefinded type");
+			loginLabel.setText("Undefinded type");
+		}
 	}
 
 	@Override
