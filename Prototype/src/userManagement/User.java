@@ -11,14 +11,18 @@ public class User {
 	private String passWord;
 	private int logged;
 	private String type;
+	private String firstName;
+	private String lastName;
 	private static User activeUser;
 
-	public User(String iD, String passWord, int logged, String type) {
+	public User(String iD, String passWord, int logged, String type, String firstName, String lastName) {
 		super();
 		this.iD = iD;
 		this.passWord = passWord;
 		this.type = type;
 		this.logged = logged;
+		this.firstName = firstName;
+		this.lastName = lastName;
 	}
 
 	public String getiD() {
@@ -51,6 +55,22 @@ public class User {
 
 	public void setLogged(int logged) {
 		this.logged = logged;
+	}
+
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
 
 	public static User getActiveUser() {

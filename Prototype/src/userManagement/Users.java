@@ -30,7 +30,8 @@ public class Users {
 			stmt = conn.createStatement();
 			rs = stmt.executeQuery(usersScheme);
 			while (rs.next()) {
-				userList.add(new User(rs.getString(1), rs.getString(2), rs.getInt(3), rs.getString(4)));
+				userList.add(new User(rs.getString(1), rs.getString(2), rs.getInt(3), rs.getString(4), rs.getString(5),
+						rs.getString(6)));
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -47,7 +48,7 @@ public class Users {
 				if (user.getiD().equals(iD))
 					return user;
 			}
-		} 
+		}
 		return (null);
 	}
 
