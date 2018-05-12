@@ -11,22 +11,21 @@ import javafx.stage.WindowEvent;
 import userManagement.User;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.TabPane;
 import javafx.scene.image.Image;
 import javafx.scene.text.Text;
 
-public class TeacherScreen {
+public class TeacherWindow {
 
 	private static Stage stage;
 
-	@FXML
-	Text date;
 
 	@SuppressWarnings("deprecation")
 	public void go() throws Exception {
 		try {
 			Stage stage = new Stage();
 			setStage(stage);
-			URL url = new File("src/application/TeacherScreen.fxml").toURL();
+			URL url = new File("src/application/TeacherWindow.fxml").toURL();
 			Parent root1 = FXMLLoader.load(url);
 			Scene scene = new Scene(root1);
 			Image image = new Image(new File("src/AES2.PNG").toURI().toString());
@@ -52,7 +51,7 @@ public class TeacherScreen {
 	}
 
 	public void setStage(Stage stage) {
-		TeacherScreen.stage = stage;
+		TeacherWindow.stage = stage;
 	}
 
 	public static void closeStage() {

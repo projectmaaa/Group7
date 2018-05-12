@@ -16,7 +16,7 @@ import resources.Utilities;
 import userManagement.User;
 import userManagement.Users;
 
-public class LoginController implements Initializable {
+public class LoginWindowController implements Initializable {
 
 	@FXML
 	private PasswordField pw;
@@ -79,6 +79,7 @@ public class LoginController implements Initializable {
 	private void clearFields() {
 		un.clear();
 		pw.clear();
+		loginLabel.setText("");
 	}
 
 	/**
@@ -92,7 +93,7 @@ public class LoginController implements Initializable {
 			user.setActiveUser(user);
 			User.updateUserLogged(user.getiD(), 1);
 			LoginWindow.closeStage();
-			TeacherScreen maintainWindow = new TeacherScreen();
+			TeacherWindow maintainWindow = new TeacherWindow();
 			maintainWindow.go();
 		} else if (user.getType().equals("Principal")) {
 			System.out.println("Principal Window In work");

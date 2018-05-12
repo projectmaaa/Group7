@@ -18,7 +18,7 @@ public class LoginWindow extends Application {
 	public void start(Stage stage) {
 		try {
 			setStage(stage);
-			URL url = new File("src/application/Login.fxml").toURL();
+			URL url = new File("src/application/LoginWindow.fxml").toURL();
 			Parent root = FXMLLoader.load(url);
 			Scene scene = new Scene(root);
 			Image image = new Image(new File("src/AES2.PNG").toURI().toString());

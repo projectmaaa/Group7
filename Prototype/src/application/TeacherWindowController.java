@@ -7,6 +7,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.TabPane;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
@@ -14,7 +15,7 @@ import javafx.scene.text.Text;
 import resources.Utilities;
 import userManagement.User;
 
-public class TeacherScreenController implements Initializable {
+public class TeacherWindowController implements Initializable {
 
 	@FXML
 	private AnchorPane anchorPane;
@@ -43,10 +44,13 @@ public class TeacherScreenController implements Initializable {
 	@FXML
 	private Button editOrRemoveQuestion;
 
+	@FXML
+	private TabPane tabPane;
+
 	private boolean clickedOnMaintainQuestion;
 
 	public void logOutButtonHandler(ActionEvent event) throws Exception {
-		TeacherScreen.getStage().close();
+		TeacherWindow.getStage().close();
 		LoginWindow.getStage().show();
 		LoginWindow.getStage().sizeToScene();
 		User.updateUserLogged(User.getActiveUser().getiD(), 0);
@@ -88,5 +92,6 @@ public class TeacherScreenController implements Initializable {
 		welcomeText.setText(welcomeText.getText() + "  " + User.getActiveUser().getFirstName() + "  "
 				+ User.getActiveUser().getLastName());
 		date.setText(Utilities.setDateS());
+		anchorPane.requestFocus();
 	}
 }
