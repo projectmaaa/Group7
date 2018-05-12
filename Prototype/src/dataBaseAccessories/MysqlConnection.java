@@ -10,6 +10,7 @@ public class MysqlConnection {
 	 * 
 	 * @return returns the connection
 	 */
+	@SuppressWarnings("deprecation")
 	public static Connection connection() {
 		try {
 			Class.forName("com.mysql.jdbc.Driver").newInstance();

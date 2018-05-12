@@ -14,7 +14,7 @@ import javafx.scene.text.Text;
 import resources.Utilities;
 import userManagement.User;
 
-public class MaintainController implements Initializable {
+public class TeacherScreenController implements Initializable {
 
 	@FXML
 	private AnchorPane anchorPane;
@@ -46,7 +46,7 @@ public class MaintainController implements Initializable {
 	private boolean clickedOnMaintainQuestion;
 
 	public void logOutButtonHandler(ActionEvent event) throws Exception {
-		MaintainWindow.getStage().close();
+		TeacherScreen.getStage().close();
 		LoginWindow.getStage().show();
 		LoginWindow.getStage().sizeToScene();
 		User.updateUserLogged(User.getActiveUser().getiD(), 0);
@@ -56,10 +56,10 @@ public class MaintainController implements Initializable {
 		try {
 			clickedOnMaintainQuestion = true;
 			System.out.println("Enter");
-			// anchorPane.getChildren().add(addQuestion);
-			// anchorPane.getChildren().add(editOrRemoveQuestion);
-			// addQuestion.setVisible(true);
-			// editOrRemoveQuestion.setVisible(true);
+			anchorPane.getChildren().add(addQuestion);
+			anchorPane.getChildren().add(editOrRemoveQuestion);
+			addQuestion.setVisible(true);
+			editOrRemoveQuestion.setVisible(true);
 		} catch (Throwable e1) {
 			e1.printStackTrace();
 		} finally {
@@ -71,7 +71,7 @@ public class MaintainController implements Initializable {
 		try {
 			if (clickedOnMaintainQuestion) {
 				System.out.println("leave");
-				// anchorPane.getChildren().remove(addQuestion);
+				anchorPane.getChildren().remove(addQuestion);
 				anchorPane.getChildren().remove(editOrRemoveQuestion);
 				clickedOnMaintainQuestion = false;
 			}

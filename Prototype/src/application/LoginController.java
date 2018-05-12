@@ -92,7 +92,7 @@ public class LoginController implements Initializable {
 			user.setActiveUser(user);
 			User.updateUserLogged(user.getiD(), 1);
 			LoginWindow.closeStage();
-			MaintainWindow maintainWindow = new MaintainWindow();
+			TeacherScreen maintainWindow = new TeacherScreen();
 			maintainWindow.go();
 		} else if (user.getType().equals("Principal")) {
 			System.out.println("Principal Window In work");

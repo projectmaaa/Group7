@@ -14,7 +14,7 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.text.Text;
 
-public class MaintainWindow {
+public class TeacherScreen {
 
 	private static Stage stage;
 
@@ -26,7 +26,7 @@ public class MaintainWindow {
 		try {
 			Stage stage = new Stage();
 			setStage(stage);
-			URL url = new File("src/application/Maintain.fxml").toURL();
+			URL url = new File("src/application/TeacherScreen.fxml").toURL();
 			Parent root1 = FXMLLoader.load(url);
 			Scene scene = new Scene(root1);
 			Image image = new Image(new File("src/AES2.PNG").toURI().toString());
@@ -52,7 +52,7 @@ public class MaintainWindow {
 	}
 
 	public void setStage(Stage stage) {
-		MaintainWindow.stage = stage;
+		TeacherScreen.stage = stage;
 	}
 
 	public static void closeStage() {
