@@ -7,6 +7,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TabPane;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
@@ -32,17 +33,20 @@ public class TeacherWindowController implements Initializable {
 	@FXML
 	private Text date;
 
+	// @FXML
+	// private ScrollPane scrollPaneEditOrRemoveQuestions;
+
 	@FXML
 	private Text welcomeText;
 
-	@FXML
-	private Button maintainQuestionButton;
+	// @FXML
+	// private Button maintainQuestionButton;
 
-	@FXML
-	private Button addQuestion;
+	// @FXML
+	// private Button addQuestion;
 
-	@FXML
-	private Button editOrRemoveQuestion;
+	// @FXML
+	// private Button editOrRemoveQuestion;
 
 	@FXML
 	private TabPane tabPane;
@@ -56,35 +60,32 @@ public class TeacherWindowController implements Initializable {
 		User.updateUserLogged(User.getActiveUser().getiD(), 0);
 	}
 
-	public void maintainQuestionShowOption(MouseEvent e) {
+	public void openEditorRemove(ActionEvent event) {
 		try {
 			clickedOnMaintainQuestion = true;
 			System.out.println("Enter");
-			anchorPane.getChildren().add(addQuestion);
-			anchorPane.getChildren().add(editOrRemoveQuestion);
-			addQuestion.setVisible(true);
-			editOrRemoveQuestion.setVisible(true);
-		} catch (Throwable e1) {
-			e1.printStackTrace();
-		} finally {
-			User.updateUserLogged(User.getActiveUser().getiD(), 0);
-		}
-	}
-
-	public void maintainQuestionHideOption(MouseEvent event) {
-		try {
-			if (clickedOnMaintainQuestion) {
-				System.out.println("leave");
-				anchorPane.getChildren().remove(addQuestion);
-				anchorPane.getChildren().remove(editOrRemoveQuestion);
-				clickedOnMaintainQuestion = false;
-			}
-		} catch (ClassCastException | IllegalArgumentException e) {
+			// scrollPaneEditOrRemoveQuestions.setVisible(true);
+		} catch (Throwable e) {
 			e.printStackTrace();
 		} finally {
 			User.updateUserLogged(User.getActiveUser().getiD(), 0);
 		}
 	}
+
+	// public void maintainQuestionHideOption(MouseEvent event) {
+	// try {
+	// if (clickedOnMaintainQuestion) {
+	// System.out.println("leave");
+	// anchorPane.getChildren().remove(addQuestion);
+	// anchorPane.getChildren().remove(editOrRemoveQuestion);
+	// clickedOnMaintainQuestion = false;
+	// }
+	// } catch (ClassCastException | IllegalArgumentException e) {
+	// e.printStackTrace();
+	// } finally {
+	// User.updateUserLogged(User.getActiveUser().getiD(), 0);
+	// }
+	// }
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
@@ -92,6 +93,5 @@ public class TeacherWindowController implements Initializable {
 		welcomeText.setText(welcomeText.getText() + "  " + User.getActiveUser().getFirstName() + "  "
 				+ User.getActiveUser().getLastName());
 		date.setText(Utilities.setDateS());
-		anchorPane.requestFocus();
 	}
 }
