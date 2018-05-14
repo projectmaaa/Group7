@@ -4,6 +4,11 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Observable;
+
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import resources.Question;
 
 public class TeacherController {
 	private Connection connection;
@@ -11,7 +16,20 @@ public class TeacherController {
 	public TeacherController() {
 		connection = MysqlConnection.connection(); /* get the defined server connection */
 	}
-	
+
+	/* returns the whole table of questions for the table view*/
+	public ObservableList<Question> getQuestions() throws SQLException {
+		ObservableList<Question> questions = FXCollections.observableArrayList();
+		Statement statement = connection.createStatement();
+		ResultSet rs = statement.executeQuery("SELECT * FROM Questions;");
+		while (rs.next()) {
+			questions.add(
+					new Question(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5)));
+		}
+		rs.close();
+		return questions;
+	}
+
 	/* returns the selected question details (if exists) */
 	public String requestedQuestion(String questionID) throws SQLException {
 		Statement statement = connection.createStatement();
@@ -29,13 +47,12 @@ public class TeacherController {
 		rs.close();
 		return question;
 	}
-	
+
 	/*
 	 * currently changes only the correct answer field in the DB but will be
 	 * expanded to whole question
 	 */
-	public boolean editQuestion(String questionID, String newCorrectAnswer)
-			throws SQLException {
+	public boolean editQuestion(String questionID, String newCorrectAnswer) throws SQLException {
 		Statement statement = connection.createStatement();
 		ResultSet rs = statement.executeQuery("SELECT * FROM Questions;");
 		while (rs.next()) {
