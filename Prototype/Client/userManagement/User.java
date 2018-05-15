@@ -3,7 +3,7 @@ package userManagement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import dataBaseAccessories.MysqlConnection;
+import dataBaseAccessories.SqlConnection;
 
 public class User {
 
@@ -94,7 +94,7 @@ public class User {
 		Connection conn = null;
 		PreparedStatement updateUser;
 		try {
-			conn = MysqlConnection.connection();
+			conn = SqlConnection.connection();
 
 		} catch (NullPointerException e) {
 			System.out.println("No Connection");

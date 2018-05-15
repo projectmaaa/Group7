@@ -1,7 +1,7 @@
 package userManagement;
 
 import java.util.ArrayList;
-import dataBaseAccessories.MysqlConnection;
+import dataBaseAccessories.SqlConnection;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -22,7 +22,7 @@ public class Users {
 		String usersScheme = ("SELECT * FROM Users;");
 		userList = new ArrayList<User>();
 		try {
-			conn = MysqlConnection.connection();
+			conn = SqlConnection.connection();
 		} catch (NullPointerException e) {
 			System.out.println("No Connection");
 		}

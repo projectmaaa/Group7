@@ -4,8 +4,6 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.Observable;
-
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import resources.Question;
@@ -14,7 +12,7 @@ public class TeacherController {
 	private Connection connection;
 
 	public TeacherController() {
-		connection = MysqlConnection.connection(); /* get the defined server connection */
+		connection = SqlConnection.connection(); /* get the defined server connection */
 	}
 
 	/* returns the whole table of questions for the table view*/
