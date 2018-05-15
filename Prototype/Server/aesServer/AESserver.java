@@ -1,14 +1,19 @@
 package aesServer;
 
+import java.sql.Connection;
+
+import dataBaseAccessories.SqlConnection;
 import ocsf.server.AbstractServer;
 import ocsf.server.ConnectionToClient;
 
 public class AESserver extends AbstractServer {
 
 	final public static int defaultPort = 3306;
+	private Connection connection;
 
 	public AESserver(int port) {
 		super(port);
+		connection = SqlConnection.connection();
 	}
 
 	@Override
