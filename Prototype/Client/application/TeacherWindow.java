@@ -22,7 +22,7 @@ public class TeacherWindow {
 		try {
 			Stage stage = new Stage();
 			setStage(stage);
-			URL url = new File("src/application/TeacherWindow.fxml").toURL();
+			URL url = new File("Client/application/TeacherWindow.fxml").toURL();
 			Parent root1 = FXMLLoader.load(url);
 			Scene scene = new Scene(root1);
 			Image image = new Image(new File("src/AES2.PNG").toURI().toString());
