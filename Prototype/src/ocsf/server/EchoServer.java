@@ -14,8 +14,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Time;
 
-import com.sun.org.apache.bcel.internal.generic.INSTANCEOF;
-
 /**
  * This class overrides some of the methods in the abstract superclass in order
  * to give more functionality to the server.

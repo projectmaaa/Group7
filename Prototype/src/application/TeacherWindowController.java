@@ -10,11 +10,10 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.MenuItem;
-import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import resources.Question;
@@ -51,15 +50,15 @@ public class TeacherWindowController implements Initializable {
 	@FXML
 	private TableView<Question> tableView;
 	@FXML
-	private TableColumn questionIDColumn;
+	private TableColumn<Question, String> questionIDColumn;
 	@FXML
-	private TableColumn authorColumn;
+	private TableColumn<Question, String> authorColumn;
 	@FXML
-	private TableColumn questionTextColumn;
+	private TableColumn<Question, String> questionTextColumn;
 	@FXML
-	private TableColumn possibleAnswersColumn;
+	private TableColumn<Question, String> possibleAnswersColumn;
 	@FXML
-	private TableColumn correctAnswerColumn;
+	private TableColumn<Question, String> correctAnswerColumn;
 
 	private boolean clickedOnMaintainQuestion;
 	private TeacherController controller;
@@ -74,16 +73,26 @@ public class TeacherWindowController implements Initializable {
 	/* Edit\Remove Question was pressed */
 	public void openEditorRemove(ActionEvent event) {
 		try {
-			ObservableList<Question> data = controller.getQuestions();
 			clickedOnMaintainQuestion = true;
 			System.out.println("Enter");
+			setColumns();
+			tableView.setItems(controller.getQuestions());
+			tableView.refresh();
 			tableView.setVisible(true);
-			tableView.setItems(data);
 		} catch (Throwable e) {
 			e.printStackTrace();
 		} finally {
 			User.updateUserLogged(User.getActiveUser().getiD(), 0);
 		}
+	}
+
+	/* define the columns */
+	private void setColumns() { 
+		questionIDColumn.setCellValueFactory(new PropertyValueFactory<>("questionID"));
+		authorColumn.setCellValueFactory(new PropertyValueFactory<>("author"));
+		questionTextColumn.setCellValueFactory(new PropertyValueFactory<>("questionText"));
+		possibleAnswersColumn.setCellValueFactory(new PropertyValueFactory<>("possibleAnswers"));
+		correctAnswerColumn.setCellValueFactory(new PropertyValueFactory<>("correctAnswer"));
 	}
 
 	// public void maintainQuestionHideOption(MouseEvent event) {
