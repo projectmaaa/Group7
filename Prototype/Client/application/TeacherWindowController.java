@@ -32,19 +32,8 @@ public class TeacherWindowController implements Initializable {
 	private Button logoutButton;
 	@FXML
 	private Text date;
-
-	// @FXML
-	// private ScrollPane scrollPaneEditOrRemoveQuestions;
-
 	@FXML
 	private Text welcomeText;
-
-	// @FXML
-	// private Button maintainQuestionButton;
-
-	// @FXML
-	// private Button addQuestion;
-
 	@FXML
 	private MenuItem editOrRemoveQuestion;
 	@FXML
@@ -87,28 +76,13 @@ public class TeacherWindowController implements Initializable {
 	}
 
 	/* define the columns */
-	private void setColumns() { 
+	private void setColumns() {
 		questionIDColumn.setCellValueFactory(new PropertyValueFactory<>("questionID"));
 		authorColumn.setCellValueFactory(new PropertyValueFactory<>("author"));
 		questionTextColumn.setCellValueFactory(new PropertyValueFactory<>("questionText"));
 		possibleAnswersColumn.setCellValueFactory(new PropertyValueFactory<>("possibleAnswers"));
 		correctAnswerColumn.setCellValueFactory(new PropertyValueFactory<>("correctAnswer"));
 	}
-
-	// public void maintainQuestionHideOption(MouseEvent event) {
-	// try {
-	// if (clickedOnMaintainQuestion) {
-	// System.out.println("leave");
-	// anchorPane.getChildren().remove(addQuestion);
-	// anchorPane.getChildren().remove(editOrRemoveQuestion);
-	// clickedOnMaintainQuestion = false;
-	// }
-	// } catch (ClassCastException | IllegalArgumentException e) {
-	// e.printStackTrace();
-	// } finally {
-	// User.updateUserLogged(User.getActiveUser().getiD(), 0);
-	// }
-	// }
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
