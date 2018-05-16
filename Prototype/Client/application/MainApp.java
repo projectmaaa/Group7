@@ -23,7 +23,7 @@ public class MainApp {
 		try {
 			host = args[0];
 		} catch (ArrayIndexOutOfBoundsException e) {
-			host = "localhost"; //mor
+			host = "localhost"; 
 		}
 		MainApp userApp = new MainApp(host, defaultPort);
 		LoginWindow.go();
