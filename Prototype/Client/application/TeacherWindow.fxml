@@ -68,8 +68,8 @@
         <columns>
           <TableColumn fx:id="questionIDColumn" prefWidth="85.0" text="Question ID" />
           <TableColumn fx:id="authorColumn" prefWidth="101.0" text="Author" />
-            <TableColumn fx:id="questionTextColumn" prefWidth="433.0" text="Question Text" />
-            <TableColumn fx:id="possibleAnswersColumn" prefWidth="201.0" text="Possible Answers" />
+            <TableColumn fx:id="questionTextColumn" prefWidth="251.0" text="Question Text" />
+            <TableColumn fx:id="possibleAnswersColumn" prefWidth="383.0" text="Possible Answers" />
             <TableColumn fx:id="correctAnswerColumn" prefWidth="159.0" text="Correct Answer" />
         </columns>
       </TableView>
