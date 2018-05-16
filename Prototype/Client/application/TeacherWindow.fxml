@@ -64,7 +64,7 @@
             </Menu>
         </menus>
       </MenuBar>
-      <TableView fx:id="tableView" editable="true" layoutX="8.0" layoutY="88.0" prefHeight="472.0" prefWidth="969.0" stylesheets="@table%20view.css">
+      <TableView fx:id="tableView" editable="true" layoutX="8.0" layoutY="105.0" prefHeight="455.0" prefWidth="969.0" stylesheets="@table%20view.css">
         <columns>
           <TableColumn fx:id="questionIDColumn" prefWidth="85.0" text="Question ID" />
           <TableColumn fx:id="authorColumn" prefWidth="101.0" text="Author" />
